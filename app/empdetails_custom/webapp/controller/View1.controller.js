@@ -40,7 +40,7 @@ sap.ui.define([
             that.getView().byId("idContact").setValue("");
             that.getView().byId("idAge").setValue("");
             }).catch((err) => {
-                MessageBox.error("Error adding item : " + err);
+                MessageBox.error("Error adding Employee : " + err);
             });
 
 		}
