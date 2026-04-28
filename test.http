@@ -1,0 +1,38 @@
+#
+# test service
+###
+GET http://localhost:4004/odata/v4/catalog/employee
+
+###
+GET http://localhost:4004/odata/v4/catalog/employee(11)
+
+### Insert new entry
+POST http://localhost:4004/odata/v4/catalog/employee
+Content-Type: application/json
+ 
+{
+    "ID": 66,
+  "Name": "Rahul Roy",
+  "Depertment": "Management",
+  "Role": "Project Manager",
+  "Location": "Kolkata",
+  "Salary": 4500000
+}
+
+### Update existing entry
+PATCH  http://localhost:4004/odata/v4/catalog/employee(66)
+Content-Type: application/json
+ 
+{
+    "ID": 66,
+  "Name": "Rahul Roy",
+  "Depertment": "Management",
+  "Role": "Project Manager",
+  "Location": "Bangalore",
+  "Salary": 4500000,
+  "Contact" : "9874665799",
+  "Age": 40
+}
+
+### Delete an existing entry
+DELETE   http://localhost:4004/odata/v4/catalog/employee(66)

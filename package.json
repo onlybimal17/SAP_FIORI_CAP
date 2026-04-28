@@ -1,0 +1,43 @@
+{
+  "name": "CAP_01",
+  "version": "1.0.0",
+  "dependencies": {
+    "@cap-js/hana": "^2",
+    "@sap/cds": "^9"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^2",
+    "@sap/cds-dk": "^9",
+    "cds-plugin-ui5": "^0.13.0",
+    "rimraf": "^5.0.5",
+    "mbt": "^1.2.29"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-empdetails": "cds watch --open empdetails/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "undeploy": "cf undeploy CAP_01 --delete-services --delete-service-keys --delete-service-brokers",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+    "watch-empdetails_custom": "cds watch --open empdetailscustom/index.html?sap-ui-xx-viewCache=false --livereload false"
+  },
+  "cds": {
+    "sql": {
+      "native_hana_associations": false
+    },
+    "requires": {
+      "db": {
+        "kind": "sqlite",
+        "credentials": {
+          "url": "db/my-employeeDetails.sqlite"
+        },
+        "schema_evolution": "auto"
+      }
+    }
+  },
+  "workspaces": [
+    "app/*"
+  ],
+  "sapux": [
+    "app/empdetails"
+  ]
+}

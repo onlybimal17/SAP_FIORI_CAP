@@ -1,0 +1,60 @@
+<mvc:View controllerName="empdetailscustom.controller.View1" xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    
+	<VBox class="sapUiSmallMargin">
+		<f:SimpleForm id="SimpleFormDisplay480_12120Dual"
+			editable="false"
+			layout="ResponsiveGridLayout"
+			title=""
+			labelSpanXL="4"
+			labelSpanL="4"
+			labelSpanM="12"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="0"
+			emptySpanL="0"
+			emptySpanM="0"
+			emptySpanS="0"
+			columnsXL="2"
+			columnsL="2"
+			columnsM="2"
+			singleContainerFullSize="false" >
+			<f:content>
+				<core:Title text="" />
+				<Label text="ID" />
+				<Input id="idEmp" placeholder="Please Enter ID" />
+				<Label text="Name" />
+				<Input id="idName" placeholder="Please Enter Name" />
+				<Label text="Depertment" />
+				<Input id="idDept" placeholder="Please Enter Depertment" />
+				
+				<Label text="Role" />
+				<Input id="idRole" placeholder="Please Enter Role" />
+                <core:Title text="" />
+				<Label text="Location" />
+				<Input id="idLocation" placeholder="Please Enter Location" />
+                <Label text="Salary" />
+				<Input id="idSalary" placeholder="Please Enter Salary" />
+                <Label text="Contact" />
+				<Input id="idContact" placeholder="Please Enter Contact" />
+                <Label text="Age" />
+				<Input id="idAge" placeholder="Please Enter Age" />
+                 
+			</f:content>
+            
+		</f:SimpleForm>
+       <VBox class="sapUiSmallMarginTop">
+        <HBox>
+                	<Button id="save" text="Save" type="Emphasized"  press=".handleSavePress" class="sapUiSmallMarginEnd " />
+					<Button id="cancel" text="Cancel"  press=".handleCancelPress" />
+                    </HBox>
+                    </VBox>
+
+	</VBox>
+
+
+    </Page>
+</mvc:View>
